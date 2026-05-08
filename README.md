@@ -13,10 +13,6 @@ The implementation is written in **Python** and relies on the **Levenberg-Marqua
 ```
 TP3/
 ├── TP3.py                        # Python implementation of all computations
-├── market_yield_t0.csv           # Market yield curve at t = 0
-├── market_yield_t1.csv           # Market yield curve at t = 1
-├── libor_data.csv                # LIBOR market data (Part III.5)
-├── indonesian_bonds.csv          # Indonesian Government Securities data (Part III.5)
 └── README.md                     # Project documentation
 ```
  
