@@ -76,32 +76,32 @@ $$\lim_{T \to 0} Y(0, T) = r_0, \qquad \lim_{T \to \infty} Y(0, T) = \frac{\eta}
 # Implemented Functions
  
 ### Bond Pricing
-- `bond_price(r0, t, T, eta, gamma, sigma)` — Computes $P(r, t; T)$ using the closed-form Vasicek formula.
+- `bond_price(r0, t, T, eta, gamma, sigma)` Computes $P(r, t; T)$ using the closed-form Vasicek formula.
 ---
  
 ### Yield Curve
-- `yield_curve(r0, T, eta, gamma, sigma)` — Computes $Y(0, T)$ for a given set of parameters.
+- `yield_curve(r0, T, eta, gamma, sigma)` Computes $Y(0, T)$ for a given set of parameters.
 ---
  
 ### Jacobian
-- `jacobian(r0, T, eta, sigma2, gamma)` — Computes the $10 \times 3$ Jacobian matrix used in the Levenberg-Marquardt algorithm:
+- `jacobian(r0, T, eta, sigma2, gamma)` Computes the $10 \times 3$ Jacobian matrix used in the Levenberg-Marquardt algorithm:
 $$J_{pj} = \frac{\partial(\text{Res})_p}{\partial \beta_j}$$
  
 ---
  
 ### Levenberg-Marquardt Calibration
-- `levenberg_marquardt(Y_market, T, r0)` — Minimizes the sum of squared residuals:
+- `levenberg_marquardt(Y_market, T, r0)` Minimizes the sum of squared residuals:
 $$\min_{\beta} \Phi = \sum_{p=1}^{10} \left(Y^{\text{market}}_p - Y(\beta, T_p)\right)^2$$
  
 ---
  
 ### Simulation
-- `simulate_vasicek(r0, T, N, eta, gamma, sigma)` — Simulates a path of the short rate using the discretization:
+- `simulate_vasicek(r0, T, N, eta, gamma, sigma)` Simulates a path of the short rate using the discretization:
 $$r_{i+1} = r_i e^{-\gamma \Delta t} + \frac{\eta}{\gamma}(1 - e^{-\gamma \Delta t}) + \sigma \sqrt{\frac{1 - e^{-2\gamma \Delta t}}{2\gamma}} \cdot \mathcal{N}(0,1)$$
  
 ---
  
-# Part I — Yield Curve Shape Analysis
+# Part I Yield Curve Shape Analysis
  
 The yield curve $T \mapsto Y(0, T)$ is plotted for fixed parameters:
  
@@ -117,7 +117,7 @@ Three shapes are illustrated by varying $r_0$:
  
 ---
  
-# Part II — Calibration to Market Yield Curve
+# Part II Calibration to Market Yield Curve
  
 ## Market Data (t = 0)
  
@@ -156,7 +156,7 @@ Note: the time to maturity is now $T - t = T - 1$.
  
 ---
  
-# Part III — Calibration to Historical Data
+# Part III Calibration to Historical Data
  
 ## Simulation
  
